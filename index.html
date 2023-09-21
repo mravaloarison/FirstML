@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="main.css" />
+    <title>My first ML</title>
+</head>
+<body>
+    <header>
+        <h2>007ML</h2>
+    </header>
+
+    <p class="guide-a">
+        Please wait until the button is ready to use 
+    </p>
+
+    <section id="app" class="invisible">
+        <p class="guide-b">
+            After clicking the "Start 007ML" bellow, allow access to your camera to experience 007ML.
+        </p>
+        <div id="liveView">
+            <button id="startML" class="">Start 007ML</button>
+            <video id="webcam" autoplay muted class="hidden"></video>
+            <button id="stopML" class="hidden">Stop 007ML</button>
+        </div>
+    </section>
+
+
+    <!-- Import TensorFlow.js library -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"
+      type="text/javascript"
+    ></script>
+    <!-- Load the coco-ssd model to use to recognize things in images -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+    <!-- Import the JavaScript page to do give cmd -->
+    <script src="app.js" defer></script>
+</body>
+</html>
