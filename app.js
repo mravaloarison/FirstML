@@ -46,8 +46,6 @@ function newClassification() {
 }
 
 
-
-
 // StartML function
 function startMLFunction(event) {
     // Only continue if the COCO-SSD has finished loading.
@@ -61,6 +59,15 @@ function startMLFunction(event) {
     // show videocam & allow to stop videocam
     document.getElementById("stopML").classList.remove("hidden");
     document.getElementById("webcam").classList.remove("hidden");
+
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+        .then(function(stream) {
+            document.getElementById("webcam").srcObject = stream;
+        });
+}
+
+
+function predictWebcam() {
 }
 
 // Pretend model has loaded so we can try out the webcam code.
@@ -70,6 +77,10 @@ myApp.classList.remove('invisible');
 // StopML function
 function stopMLFunction() {
     const liveView = document.getElementById("liveView");
+    // stop video camera
+    document.getElementById("webcam").srcObject.getTracks()
+        .forEach(track => track.stop());
+
     // Remove classification elements and event listener
     while (liveView.firstChild) {
         liveView.removeChild(liveView.firstChild);
