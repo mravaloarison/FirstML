@@ -13,10 +13,19 @@
     </header>
 
     <p class="guide-a">
-        Please wait until the button is ready to use 
+        Upload a model to get started
     </p>
 
-    <section id="app" class="invisible">
+    <ul id="input-prediction" class="guide-a">
+    </ul>
+    <img id="img" class="hidden" src="" />
+    
+    <div class="btn">
+        <input type="file" id="img-input" accept="image/*" />
+        ✨ Upload Model
+    </div>
+    
+    <section id="app" class="invisible hidden">
         <p class="guide-b">
             After clicking the "Start 007ML" bellow, allow access to your camera to experience 007ML.
         </p>
@@ -26,8 +35,8 @@
             <button id="stopML" class="hidden">Stop 007ML</button>
         </div>
     </section>
-
-
+    
+    
     <!-- Import TensorFlow.js library -->
     <script
       src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"
