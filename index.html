@@ -9,33 +9,32 @@
 </head>
 <body>
     <header>
-        <h2>007ML</h2>
+        <h2>ML07-01</h2>
+        <a href="https://github.com/mravaloarison/ML07-01" target="_blank">Github</a>
     </header>
 
-    <p class="guide-a">
-        Upload a model to get started
-    </p>
+    <section>
+        <p>Upload a model to get started</p>
 
-    <ul id="input-prediction" class="guide-a">
-    </ul>
-    <img id="img" class="hidden" src="" />
+        <!-- output of immage imported will be displayed here -->
+        <div class="imported-img">
+            <div class="msg hidden"></div>
+            <img id="imported-img" class="hidden" src="" />
+        </div>
+
+        <div class="actions">
+            <div class="btn">
+                <input type="file" id="import-in" accept="image/*" />
+                ✨ Upload Model
+            </div>
     
-    <div class="btn">
-        <input type="file" id="img-input" accept="image/*" />
-        ✨ Upload Model
-    </div>
-    
-    <section id="app" class="invisible hidden">
-        <p class="guide-b">
-            After clicking the "Start 007ML" bellow, allow access to your camera to experience 007ML.
-        </p>
-        <div id="liveView">
-            <button id="startML" class="">Start 007ML</button>
-            <video id="webcam" autoplay muted class="hidden"></video>
-            <button id="stopML" class="hidden">Stop 007ML</button>
+            <div id="detect-btn" class="btn disabled">🔎 Detect</div>
         </div>
     </section>
-    
+
+    <footer>
+        <p>© 2023 by Mami</p>
+    </footer>
     
     <!-- Import TensorFlow.js library -->
     <script
